@@ -1,20 +1,23 @@
 <html>
 <head>
+<link rel="icon" href="icon.jpg">
 <title>Our Small World</title>
 
 </head>
-<body background="bg.jpg" onload="open()">
+<body background="bg.jpg" onload="slide()">
 <div id="head">
 <center>
 <font size="20"><b>Our small world</b></font>
+<br>
+<br>
 </center>
-<div align="left">
-</div>
+<!--
+ <button disabled><a href="gallery.html">Gallery</a></button>
+-->
 </div>
 <br>
 <table>
 <tr>
-<div align="right">
 <div id="side_bubble">
 <center>
 <h1><u>News And Updates</u></h1>
@@ -23,7 +26,9 @@
 <center>
 <legend><u>News</u></legend>
 </center>
-<p>no news at the moment, sorry
+<p>
+<li>The new discord server has been released. <a href="https://discord.gg/6R4Ttyx">Discord</a></li>
+</p>
 </fieldset>
 <br>
 <fieldset>
@@ -37,8 +42,10 @@
 </fieldset>
 <br>
 <center>
-<b><u>Cool pics of the week:</u></b>
+<b><u>Cool pic of the week:</u></b>
 <img src="Potw/noimg.jpg" width="300" height="300" id="image_slider"/>
+<br>
+<button onclick="slide()" disabled>Next Pic</button>
 </center>
 <br>
 <!-- begin wwww.htmlcommentbox.com -->
@@ -49,10 +56,8 @@
 <br>
 <!-- LikeBtn.com BEGIN --> <span class="likebtn-wrapper" data-ef_voting="heartbeat" data-white_label="true" data-identifier="item_1"></span> <script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script> <!-- LikeBtn.com END -->
 </div>
-</div>
 </tr>
 <tr>
-<div align="left">
 <div id="container">
 <center>
 <font size="10"><h1><u>Posts</u></h1></font>
@@ -92,10 +97,20 @@
 <p>2018/02/27</p>
 </fieldset>
 <br>
-</div>
+<fieldset>
+<legend>My vacation</legend>
+<center>
+<b>Jamaica 2018</b>
+</center>
+<p>My family and i just got back from our vacation in jamacia. It was a great trip, we got burnt, ate lots of food, and generally had a great time! I am however, happy to be home. I would highly recomend going to jamaica if you are looking for a warm trip and great people, and even better food. I have added a comments section if you haven't noticed so I would really appreciate it if you let me know how you like the page here. And remember to like the page so i can see if there really is anybody reading. :) And don't forget to share my page with your friends and family, and keep checking in to make sure you don't miss out on anything that i have on here.</p>
+<br>
+<p>2018/03/9</p>
+</fieldset>
 </tr>
+</div>
 </table>
-</br>
+<div id="footer">
+</div>
 </body>
 <style>
 #head{
@@ -109,9 +124,7 @@ color: white;
 #container{
 float: left;
 width: 60%;
-height: 90%;
-display: flex; 
-flex-direction: column;
+height: 110%;
 left:0;
 background-image: url('cont.jpg');
 }
@@ -119,7 +132,7 @@ background-image: url('cont.jpg');
 #side_bubble{
 float: right;
 width: 35%;
-height: 90%;
+height: 100%;
 background-image: url('bbl.jpg');
 }
 
@@ -134,27 +147,38 @@ background-image: url('bbl.jpg');
     font-size: 16px;
 }
 
-.button3 {border-radius:8px;}
+
+
+#footer{
+position: relative;
+bottom: -106%;
+background-image: url('head.jpg');
+width: 100%;
+height: 70;
+left:0;
+color: white;
+}
 </style>
 <script>
-var run = false;
-
-function open(){
-run = true;
+function slide(){
+var picnum = Math.floor(Math.random()*4);
+if (picnum < 1){
+picnum = 1;
 }
-
-var pic = Math.floor(Math.random()*3);
-
-while(run = true){
-if (pic = 1){
-document.getElementById('Pic').src = "Potw/";
-setTimeout(nextFrame, 10000);
-if (pic = 2){
-document.getElementById('image_slider').src ="Potw/";
+if(picnum = 1){
+document.getElementById('image_slider').src ="Potw/1.jpg";
+}
+else{
+if(picnum = 2){
+document.getElementById('image_slider').src ="Potw/2.jpg";
+}
+else{
+	if(picnum = 3){
+document.getElementById('image_slider').src ="Potw/3.jpg";
 }
 }
 }
-
+}
 </script>
 
 <!-- Default Post code
